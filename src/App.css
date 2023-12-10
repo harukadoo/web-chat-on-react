@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.chat{
+  width: 50%;
+  height: 100%;
+}
+
+.chat__container{
+  padding: 7vh 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messages{
+  height: 100%;
+}
+
+.messages__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  gap: 1.5vh;
+  padding: 1.5vh 0;
+}
+
+.message{
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.message__content{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 100%;
+}
+
+.message__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.message__user-name{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.message__data{
+  opacity: .7;
+}
+
+.message__field{
+  font-size: 18px;
+}
+
+.message__file-name{
+  color: blue;
+  cursor: pointer;
+}
+
+.message__icon{
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-color: rgb(255, 91, 160);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.field__user-name{
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.field__message{
+  width: 100%;
+  height: 10%;
+  padding: 5px 10px;
+  font-size: 16px;
+  resize: none;
+}
+
+.message__actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.actions__add-file{
+  cursor: pointer;
+}
+
+.actions__button{
+  padding: 5px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid rgb(255, 91, 160);
   color: white;
+  background-color: rgb(255, 91, 160);
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: all .4s ease-out;
+  -webkit-transition: all .4s ease-out;
+  -moz-transition: all .4s ease-out;
+  -ms-transition: all .4s ease-out;
+  -o-transition: all .4s ease-out;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.actions__button:hover{
+  border: 2px solid rgb(255, 91, 160);
+  color: rgb(255, 91, 160);
+  background: none;
+  transition: all .4s ease-out;
+  -webkit-transition: all .4s ease-out;
+  -moz-transition: all .4s ease-out;
+  -ms-transition: all .4s ease-out;
+  -o-transition: all .4s ease-out;
 }
