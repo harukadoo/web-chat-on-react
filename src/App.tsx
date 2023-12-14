@@ -5,6 +5,7 @@ import Message from './components/Message';
 interface MessageData {
   userName: string;
   messageText: string;
+  currentTime: string;
   fileName: string;
 }
 
@@ -15,26 +16,28 @@ function App() {
 
   const [messageText, setMessageText] = useState<string>('');
 
-  const [currentTime, setCurrentTime] = useState<string>('');
-
   const [fileName, setFileName] = useState<string>('');
 
   function renderMessageList() {
     return messages.map((message, index) => (
-      <Message key={index} name={message.userName} text={message.messageText} date={currentTime} file={message.fileName} />
+      <Message key={index} name={message.userName} text={message.messageText} date={message.currentTime} file={message.fileName} />
     ));
   }
 
   function addMessage() {
     if (userName !== '' && messageText !== '') {
-      const newMessage: MessageData = { userName: userName, messageText: messageText, fileName: fileName };
+      const newMessage: MessageData = { 
+        userName: userName, 
+        messageText: messageText, 
+        currentTime: getTime(),
+        fileName: fileName 
+      };
+
       setMessages([...messages, newMessage]);
+      
       setUserName('');
       setMessageText('');
       setFileName('');
-      setCurrentTime('');
-
-      getTime();
 
     }
   }
@@ -45,7 +48,7 @@ function App() {
     const minutes = String(date.getMinutes()).padStart(2, '0'); 
 
     const fullDate = `${date.getDate()}/${date.getMonth() + 1}, ${hours}:${minutes}`;
-    setCurrentTime(fullDate);
+    return fullDate
   };
 
   const getFileName = (e: any) => {
