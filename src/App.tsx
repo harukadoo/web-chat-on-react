@@ -25,7 +25,7 @@ function App() {
   }
 
   function addMessage() {
-    if (userName !== '' && messageText !== '') {
+    if ((userName !== '' && messageText !== '') || fileName !== '') {
       const newMessage: MessageData = { 
         userName: userName, 
         messageText: messageText, 
@@ -39,6 +39,8 @@ function App() {
       setMessageText('');
       setFileName('');
 
+    } else {
+      alert('Please fill a name or a message text or add a file');
     }
   }
 
